@@ -29,7 +29,7 @@ places_list = [
 
 while True:
   user_input = input("Give an Indian cricketer name:- ")
-  if user_input == "exit":
+  if user_input.lower() == "exit":
     break
   else:
     random_action = rd.choice(action_list)
