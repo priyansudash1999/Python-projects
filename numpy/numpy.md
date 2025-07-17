@@ -2,6 +2,7 @@
 
 - Chapter 1 :- Basic of numpy
 - Chapter 2 :- Array Properties and Operations
+- Chapter 3 :- Indexing and slicing
 
 ## Chapter 1 :- Basic of numpy
 
@@ -155,3 +156,111 @@
   arr_rand = np.random.randint(0, 10, size=(2, 4))
   print(arr_rand) # [[4, 7, 2, 9], [5, 1, 3, 8]]
   ```
+
+## Chapter 2:- Array Properties and Operations
+
+- Get shape, size and type of data in array
+
+- Analogy:-
+  - You are a warehouse manager and you have to track all products
+  - All product has size, quantity, shape and price
+
+### Properties
+
+#### Shape :-
+
+- Help when we use multidimensional data
+
+```python
+import numpy as np
+
+arr_2d = np.array([[1,2,3], [4, 5,6]])
+print(arr_2d.shape) # (2, 3)
+```
+
+#### Size:-
+
+- Total elements in the array
+
+```python
+import numpy as np
+
+arr_2d = np.array([[1,2,3], [4, 5,6]])
+print(arr_2d.size) # 6
+```
+
+#### ndim:-
+
+- Get dimension of the array
+
+```python
+import numpy as np
+
+arr_2d = np.array([[1,2,3], [4, 5,6]])
+print(arr_2d.ndim) # 2
+```
+
+#### dtype:-
+
+- Get data type of elements
+
+```python
+import numpy as np
+
+arr_2d = np.array([[1,2,3], [4, 5,6]])
+print(arr_2d.dtype) # int64
+```
+
+> If there is only one float number between the int numbers the data type show float64. For string number it shows <U21
+
+### Converting data types :-
+
+- Syntax :-
+  - array.astype(new_type)
+- Example :-
+  ```python
+  arr_float = arr_2d.astype(float)
+  print(arr_float)
+  print(arr_float.dtype)
+  ```
+
+### Operator in numpy :-
+
+#### Addition:- +
+
+- Example :-
+
+  ```python
+  arr = np.array([10, 20, 30])
+
+  print(arr+5)
+  ```
+
+> Similarlty for other operator
+
+### Aggregation function :-
+
+- Get summmary from data
+- All functions :-
+
+  - np.sum(arr) --- add all
+  - np.mean(arr) --- average of array
+  - np.min(arr) --- miniumum element
+  - np.max(arr) --- maximum element
+  - np.std(arr) --- standard equation
+  - np.var(arr) --- variance
+
+- Example:-
+
+  ```python
+  import numpy as np
+  arrray = np.array([10, 20, 30, 40])
+  print(np.sum(arrray)) # 100
+  print(np.mean(arrray)) # 25.0
+  print(np.min(arrray)) # 10
+  print(np.max(arrray)) # 40
+  print(np.std(arrray))
+  print(np.var(arrray))
+  ```
+
+## Chapter 3:- Indexing and slicing
