@@ -3,6 +3,7 @@
 - Chapter 1 :- Basic of numpy
 - Chapter 2 :- Array Properties and Operations
 - Chapter 3 :- Indexing and slicing
+- Chapter 4 :- Reshaping and manipulating arrays
 
 ## Chapter 1 :- Basic of numpy
 
@@ -264,3 +265,62 @@ print(arr_2d.dtype) # int64
   ```
 
 ## Chapter 3:- Indexing and slicing
+
+- Access any element using index
+- Fancy indexing :- Select multiple indexing
+- Boolean masking :- Filter elements using certain conditions
+
+### indexing:-
+
+- numpy use zero base indexing
+- It has also negative indexing same as python
+
+- syntax:-
+
+  - array[index] -- for 1d array
+  - array[row, col] -- for multidimenstional array
+
+- Example:-
+
+  ```python
+  arr = np.array([10, 20, 30, 40, 50])
+
+  print(arr[0])
+  print(arr[2])
+  print(arr[-1])
+  ```
+
+### Slicing :-
+
+- Get subarray from array
+- syntax :-
+  - arr[start: end]
+  - end is excluded like range function in python
+- Example :-
+  ```python
+  array = np.array([10, 20, 30, 40, 50, 60, 70])
+  print(array[1: 5]) # 2nd index to 4th index
+  print(array[:2]) # 0th to 1st index
+  print(array[::2]) # every second element
+  print(array[::-1]) # reverse
+  ```
+
+### Fancy indexing :-
+
+- Selecting multiple elements at once
+- syntax :- array[[what to select]]
+- Example :-
+  ```python
+  print(array[[0, 2, 4]])
+  ```
+
+### Boolean Masking :-
+
+- Filter what you want
+- Syntax :- array[array > 25]
+- Example :-
+  ```python
+  print(array[array > 25])
+  ```
+
+## Chapter 4:- Reshaping and manipulating arrays
