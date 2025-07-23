@@ -324,3 +324,73 @@ print(arr_2d.dtype) # int64
   ```
 
 ## Chapter 4:- Reshaping and manipulating arrays
+
+### reshaping array
+
+- Change shape without modify in data
+- syntax:-
+  ```
+  arr.reshape()
+  ```
+- Afterr conversion the elements are same
+- We can reshape when dimension match only
+- reshaping does not create copy. It returns a view.
+- It affects original array
+
+### falttening array
+
+- When we want to convert multidimensional array to 1d array.
+- ravel() :- Modify original array
+- flatten() :- Not affect original array
+
+- Difference between ravel and flatten is ravel Returns a view if possible, else a copy but flatten always returns a copy
+
+  ```python
+  import numpy as np
+
+  arr = np.array([10, 20, 22, 40, 50, 60])
+
+  new_arr = arr.reshape(2, 3)
+  print(new_arr)
+
+
+
+  arr_ravel = new_arr.ravel()
+  arr_flat = new_arr.flatten()
+  print(arr_ravel)
+  print(arr_flat)
+  ```
+
+### Manipulate array :-
+
+#### insert :-
+
+- Insert element to array
+- syntax :- np.insert(arr_name, inserting_position, inserting_element, axis = 0 or 1)
+
+```python
+arr = np.array([10, 20, 30, 40, 50])
+
+print(np.insert(arr, 2, 100, axis=0))
+```
+
+- By default axis is 0.
+- 0 is for row and 1 is for columnn.
+- axis is not mandatory, if there is no axis written by default it is 0.
+
+#### append :-
+
+- Append at last
+- New array created. not affect original one
+- syntax :- np.append(old_arr, add_element)
+
+```python
+app_append = np.append(arr_2d, [10, 20])
+print(app_append)
+```
+
+#### Concat :-
+
+- Mixed two arrays
+- syntax :- np.concatenate((arr1, arr2), axis = 0)
+- axis 0 hai to vertical concat hoga aur 1 hai to horizontal. means 0 hai to row add hoga aur 1 hoga to column mai add hoga.
