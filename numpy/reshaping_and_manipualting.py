@@ -35,3 +35,17 @@ app_append = np.append(arr_2d, [10, 20])
 print(app_append)
 
 # concat
+
+arrrr = np.array([1, 2, 3])
+arrry = np.array([5, 6, 7])
+new_arraaay = np.concatenate((arrrr, arrry))
+print(new_arraaay)
+
+# delete
+arrrrrrrr = np.array([7,8,9,10])
+arrayaya = np.delete(arrrrrrrr, 0)
+print(arrayaya)
+
+arria_2d = np.array([[1, 2], [3, 4]])
+new_arrria_2d = np.delete(arria_2d, 0, axis=0)
+print(new_arrria_2d)

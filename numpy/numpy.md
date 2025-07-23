@@ -4,6 +4,8 @@
 - Chapter 2 :- Array Properties and Operations
 - Chapter 3 :- Indexing and slicing
 - Chapter 4 :- Reshaping and manipulating arrays
+- Chapter 5 :- Stacking and Spliting in arrays
+- Chapter 6 :- Broadcasting and Vectorization
 
 ## Chapter 1 :- Basic of numpy
 
@@ -394,3 +396,85 @@ print(app_append)
 - Mixed two arrays
 - syntax :- np.concatenate((arr1, arr2), axis = 0)
 - axis 0 hai to vertical concat hoga aur 1 hai to horizontal. means 0 hai to row add hoga aur 1 hoga to column mai add hoga.
+
+#### delete :-
+
+- Delete element from array as per specific index and return new array
+- not change original array
+- syntax :- np.delete(array, index, axis = None)
+
+## Chapter 5 :- Stacking and Spliting in arrays :-
+
+### Stacking :-
+
+- There are two types of stack in numpy when work on array
+- Types :-
+
+  - hstack or column stack
+  - vstack or row stack
+
+- syntax :- np.hstack((arr1, arr2))
+- same as vstack
+
+- Example :-
+
+  ```python
+  import numpy as np
+  # stacking
+
+  """
+  vstack -- vertical stack
+  hstack -- horizontal stack
+  """
+  arr1 = np.array([1, 2, 3])
+  arr = np.array([1, 2, 3])
+
+  print(np.vstack((arr1, arr)))
+  print(np.hstack((arr1, arr)))
+  ```
+
+### Splitting :-
+
+- Split array into subarrays
+- There are three types of splitting
+
+  - split() - Divide into multiple subarrays
+  - vsplit() - Does not work on 1d array
+  - hsplit() - Horizonatally divide
+
+- Syntax :-
+
+  - split() :-
+    - np.split(arr, number_of_division) :- array has multiple of 2 elements otherwise get error
+    - Example :-
+      ```python
+      array= np.array([10, 20, 30, 40, 50, 60])
+      split_arr = np.split(array, 3)
+      print(split_arr) #[array([10, 20]), array([30, 40]), array([50, 60])]
+      ```
+  - vsplit():-
+    - np.vsplit(arraay, number of division)
+    - Example:-
+      ```python
+      arraay = np.array([[1,2], [3,4], [4, 5]])
+      vsplit_arr = np.vsplit(arraay, 3)
+      print(vsplit_arr) # [array([[1, 2]]), array([[3, 4]]), array([[4, 5]])]
+      ```
+  - hsplit() :-
+
+    - np.hsplit(arraay, number of division)
+    - Example :-
+
+      ```python
+      hsplit_arr = np.hsplit(arraay, 2)
+      print(hsplit_arr)
+
+      """[array([[1],
+       [3],
+       [4]]), array([[2],
+       [4],
+       [5]])]
+      """
+      ```
+
+## Chapter 6 :- Broadcasting and Vectorization :-
