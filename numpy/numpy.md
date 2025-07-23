@@ -478,3 +478,97 @@ print(app_append)
       ```
 
 ## Chapter 6 :- Broadcasting and Vectorization :-
+
+### Broadcasting :-
+
+- Why Broadcasting ?
+
+  - To perform mathematical operation on different size of array
+  - Without broadcast it is very difficult
+  - Example :-
+
+    - A shopkeeper has multiple items and He wants to give discount of 10% on all of this.
+    - So he has a list and if he wants to apply a for loop and use 10 % discount on all of the product it will be very difficult for a large datasets.
+    - Small example :-
+
+      ```python
+      # Broadcast
+      prices = [100, 200, 300, 400]
+      discount = 10 # 10 %
+
+      final_prices = []
+
+      for price in prices:
+        final_price = price - (price * discount/100)
+        final_prices.append(final_price)
+
+      print(final_prices)
+      ```
+
+    - If you are working on a big e-commerce platform like amazon or flipkart then it is a nightmare to use loops
+    - So we have broadcasting
+
+- What is broadcasting ? :-
+
+  - Broadcasting is a powerful feature in NumPy that allows you to perform operations on arrays of different shapes as if they had the same shape, without actually copying data.
+  - Gives chhutkar from for loop
+  - Fast
+  - Example :-
+
+    ```python
+    import numpy as np
+
+    discount = 10 # 10 %
+    second_prices = np.array([100, 200, 300, 400])
+    final_second_prices = second_prices - (second_prices  * discount/100)
+    print(final_second_prices)
+    ```
+
+- How numpy handles arrays of different shapes ? :-
+
+  - Matching dimensions
+    - Example :-
+      ```python
+      arr = np.array([10, 11, 12])
+      res = arr * 2
+      print(res) # [20 22 24]
+      ```
+  - Expanding single elements
+    - Example :-
+      ```python
+      matrix = np.array([[1, 2, 3], [4, 5, 6]])
+      vector = np.array([10, 20, 30])
+      result = matrix + vector
+      print(result) # [[11 22 33] [14 25 36]]
+      ```
+  - Incompatiable shapes
+
+    - Example :-
+
+      ```python
+      arraaay = np.array([[10, 11, 12], [13, 14, 15]])
+      arrraaay = np.array([1, 2])
+
+      print(arraaay + arrraaay) # ValueError: operands could not be broadcast together with shapes (2,3) (2,)
+      ```
+
+### Vectorization :-
+
+- Apply operation on elements in an array without loops
+
+  ```python
+  #  normal using list python old method
+  list1 = [1, 2, 3]
+  list2 = [4, 5, 6]
+
+  res = [x+y for x,y in zip(list1, list2)]
+  print(res)
+
+
+  l1 = np.array([1, 2, 3])
+  l2 = np.array([4, 5, 6])
+
+  res = l1+l2
+  print(res)
+
+  ```
