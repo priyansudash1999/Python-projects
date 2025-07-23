@@ -1,4 +1,4 @@
-# Chapters :-
+## Summary :-
 
 - Chapter 1 :- Basic of numpy
 - Chapter 2 :- Array Properties and Operations
@@ -6,6 +6,7 @@
 - Chapter 4 :- Reshaping and manipulating arrays
 - Chapter 5 :- Stacking and Spliting in arrays
 - Chapter 6 :- Broadcasting and Vectorization
+- Chapter 7 :- Handling missing and special values
 
 ## Chapter 1 :- Basic of numpy
 
@@ -571,4 +572,64 @@ print(app_append)
   res = l1+l2
   print(res)
 
+  ```
+
+## Chapter 7 :- Handling missing and special values :-
+
+### Why ? :-
+
+- When we work on real world data we deal with missing and incomplete values
+- Example :- When we fill any form there are may be some missing values by you
+  :- Same on mathematical values
+
+### How ? :-
+
+#### np.isnan() :- detect missing values
+
+- isnan stands for not a number
+- return boolean values
+- syntax :- np.isnan(array)
+
+  - Example :-
+
+    ```python
+    import numpy as np
+
+    arr = np.array([1, 2, np.nan, 4, np.nan, 6])
+    print(arr)
+    print(np.isnan(arr))  # [False False  True False  True False]
+    ```
+
+  > We can not compare np.nan with np.nan
+
+  - Example :-
+    ```python
+    print(np.nan == np.nan)
+    ```
+
+#### np.nan_to_num() :- replace nan to numbers
+
+- nan values ko specific number se replace kar dega
+- default is 0
+- syntax :- np.nan_to_num(array, nan=value)
+
+  - Example :-
+
+    ```python
+    import numpy as np
+
+    arr = np.array([1, 2, np.nan, 4, np.nan, 6])
+    new_arr = np.nan_to_num(arr, nan=100)
+    print(new_arr) # [  1.   2. 100.   4. 100.   6.]
+
+    new_array = np.nan_to_num(arr, nan=[100,101])
+    print(new_array) # ValueError: could not broadcast input array from shape (2,) into shape (6,)
+    ```
+
+#### np.isinf() :- detect infinite numbers
+
+- Example :-
+  ```python
+  array1 = np.array([1, 2, np.inf, 8])
+  print(np.isinf(array1))
   ```
